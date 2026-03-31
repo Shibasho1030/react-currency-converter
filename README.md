@@ -1,70 +1,124 @@
-# Getting Started with Create React App
+# 日本語 Currency Converter App
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+## 概要
+このアプリは、通貨をリアルタイムで変換するシンプルな為替レート計算ツールです。  
+ユーザーが金額と通貨を選択すると、最新の為替レートを取得して変換結果を表示します。
 
-## Available Scripts
+---
 
-In the project directory, you can run:
+## 使用技術
+- React (useState, useEffect)
+- Fetch API
+- AbortController（不要なリクエストのキャンセル）
+- Frankfurter API（為替レート取得）
 
-### `npm start`
+---
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+## 主な機能
+- 通貨変換（USD / EUR / CAD / INR / JPY）
+- 入力に応じたリアルタイム更新
+- ローディング状態の表示
+- エラーハンドリング
+- 同一通貨の場合の最適化処理
+- 不要なリクエストのキャンセル（AbortController）
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+---
 
-### `npm test`
+## 学習背景（重要）
+このアプリは、Udemy講座  
+**The Ultimate React Course 2025: React, Next.js, Redux & More**  
+のチャレンジ課題として作成しました。
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+- UI設計やアプリ設計は講座の内容に基づいています
+- 実装は自分で考えて構築しています
+- 以下の点については独自に改善・追加しました
 
-### `npm run build`
+### 自主的に行った改善
+- AbortControllerを使ったfetchのキャンセル処理
+- エラーハンドリングの実装
+- ローディング状態の管理
+- 同一通貨時の処理最適化
+- 入力値に応じたリアクティブな再計算
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+---
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+## 学んだこと
+- useEffectによる副作用管理
+- 非同期処理（async/await + fetch）
+- クリーンアップ関数の重要性
+- 状態管理とUIの同期
+- APIレスポンスの扱い方とエラーハンドリング
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+---
 
-### `npm run eject`
+## 今後の改善点
+- カスタムフックへの分離（useCurrency）
+- 入力デバウンスによるパフォーマンス改善
+- UI/UXの改善
+- TypeScript対応
+- テスト追加
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+　
+　
+　　
+　
+　
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+ # English Currency Converter App
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
+## Overview
+This is a simple currency converter application that fetches real-time exchange rates and converts amounts based on user input.
 
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
+---
 
-## Learn More
+## Tech Stack
+- React (useState, useEffect)
+- Fetch API
+- AbortController (to cancel unnecessary requests)
+- Frankfurter API (exchange rates)
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+---
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+## Features
+- Currency conversion (USD / EUR / CAD / INR / JPY)
+- Real-time updates based on user input
+- Loading state handling
+- Error handling
+- Optimization for same currency conversion
+- Request cancellation using AbortController
 
-### Code Splitting
+---
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
+## Learning Context (Important)
+This project was built as a **challenge exercise** from the Udemy course:
 
-### Analyzing the Bundle Size
+**The Ultimate React Course 2025: React, Next.js, Redux & More**
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
+- The overall idea and structure are based on the course
+- The implementation was done independently
+- Additional improvements were added
 
-### Making a Progressive Web App
+### Improvements I Implemented
+- Request cancellation using AbortController
+- Error handling
+- Loading state management
+- Optimization when converting the same currency
+- Reactive updates based on input changes
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
+---
 
-### Advanced Configuration
+## What I Learned
+- Managing side effects with useEffect
+- Handling asynchronous operations (async/await + fetch)
+- Importance of cleanup functions
+- Synchronizing state and UI
+- Handling API responses and errors
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
+---
 
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+## Future Improvements
+- Extracting logic into a custom hook (useCurrency)
+- Debouncing input for better performance
+- Improving UI/UX
+- Adding TypeScript
+- Writing tests
